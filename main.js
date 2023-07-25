@@ -89,6 +89,7 @@ stop_btn.addEventListener("click", function(){
     time.textContent = "";
     text.textContent = "";
     pause_btn.textContent = "pause";
+    bg.style.backgroundColor="#fff";
     q_flg = true;
     flg = true;
     pause_flg = false;
