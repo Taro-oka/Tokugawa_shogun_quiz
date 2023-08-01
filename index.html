@@ -3,25 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="style/style.css">
+    <title>徳川15代暗記ツール | Home</title>
 </head>
 <body>
-    <div class="container box">
-        <div class="time_box">
-            <span class="time"></span>
-            <span class="bg"></span>
+    <div id="global_container">
+        <div id="container">
+            <header class="header">
+                <div class="header__logo">
+                    <div class="logo">
+                        <img src="img/tokugawa.jpg" class="logo_img">
+                    </div>
+                    <div class="title">
+                        <span>徳川15代</span>
+                        <span>暗記ツール</span>
+                    </div>
+                </div>
+                <nav class="header__nav">
+                    <ul class="header__nav__ul">
+                        <li class="header__nav__ul__li"><a href="index.html">Home</a></li>
+                        <li class="header__nav__ul__li"><a href="about.html">About</a></li>
+                        <li class="header__nav__ul__li"><a href="">Contact</a></li>
+                    </ul>
+                </nav>
+                <button class="header__btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </header>
+            <main class="quiz">
+                <h1 class="quiz__title">徳川15代将軍を覚えよう</h1>
+                <section class="quiz__box">
+                    <div class="quiz__box__time">
+                        <span class="time"></span>
+                        <span class="bg"></span>    
+                    </div>
+                    <div class="quiz__box__text"> 
+                        <span class="text"></span>
+                    </div>
+                </section>
+                <section class="quiz__buttons">
+                    <button class="start_btn quiz-btn">start</button>
+                    <button class="stop_btn quiz-btn">stop</button>
+                    <button class="pause_btn quiz-btn">pause</button>
+                    <button class="skip_btn quiz-btn">skip</button>
+                </section>
+            </main>
         </div>
-        <div class="text_box"> 
-            <span class="text"></span>
+        <div class="mobile_menu">
+            <button class="mobile_menu__btn">
+                <span></span>
+                <span></span>
+            </button>
+            <div class="mobile_menu__nav">
+                <ul class="mobile_menu__nav__ul">
+                    <li class="mobile_menu__nav__ul__li"><a href="index.html">Home</a></li>
+                    <li class="mobile_menu__nav__ul__li"><a href="about.html">About</a></li>
+                    <li class="mobile_menu__nav__ul__li"><a href="">Contact</a></li>
+                </ul>
+            </div>
         </div>
-    </div>
-    <div class="container btns">
-        <button class="start_btn">start</button>
-        <button class="stop_btn">stop</button>
-        <button class="pause_btn">pause</button>
-        <button class="skip_btn">skip</button>
-    </div>
-    <script src="main.js"></script>
+        </div>
+    <script src="script/main.js"></script>
+    <script src="script/mobile_menu.js"></script>
 </body>
 </html>

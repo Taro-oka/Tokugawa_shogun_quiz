@@ -1,0 +1,21 @@
+@use "../global" as *;
+@use "common" as *;
+
+.quiz-btn {
+    border: none;
+    background-color: $cBlack;
+    color: $cWhite;
+    cursor: pointer;
+    position: relative;
+    display: block;
+    width: 200px;
+    height: 40px;
+    transition: all 0.3s;
+    
+    &:hover {
+        @extend .border;
+        border-radius: 0%;
+        color: $cBlack;
+        background-color: $cWhite;
+    }
+}

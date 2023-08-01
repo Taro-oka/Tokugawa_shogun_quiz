@@ -1,0 +1,115 @@
+@use "../global" as *;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: '游ゴシック', sans-serif;
+}
+
+// フォントサイズに関するコモン要素
+.font-sm {
+    font-size: 16px;  
+    @include mq(md) {
+        font-size: 32px;
+    }
+}
+
+.font-md {
+    font-size: 24px;
+    @include mq(md) {
+        font-size: 40px;
+    }
+}
+
+.font-lg {
+    font-size: 32px;
+    @include mq(md) {
+        font-size: 50px;
+    }
+}
+
+.font-xlg {
+    font-size: 50px;
+    @include mq(md) {
+        font-size: 80px;
+    }
+}
+
+.font-xxlg {
+    font-size: 100px;
+}
+
+.font-header-nav {
+    font-size: 20px;
+}
+
+// マージンボトムに関するコモン要素
+.mb-sm {
+    margin-bottom: 20px;
+
+    @include mq(md) {
+        margin-bottom: 60px;
+    }
+}
+
+.mb-md {
+    margin-bottom: 60px;
+
+    @include mq(md) {
+        margin-bottom: 90px;
+    }
+}
+
+.mb-lg {
+    margin-bottom: 100px;
+
+    @include mq(md) {
+        margin-bottom: 120px;
+    }
+}
+
+
+
+// パディングボトムに関するコモン要素
+.pb-sm {
+    padding-bottom: 10px;
+}
+
+.pb-md {
+    padding-bottom: 20px;
+}
+
+.pb-lg {
+    padding-bottom: 30px;
+}
+
+
+// コンテンツの幅に関するコモン要素
+.home-MxWidth {
+    width: 95%;
+    margin: 0 auto;
+    
+    @include mq(md) {
+        width: 75%;
+    }
+
+    @include mq(lg) {
+        width: 55%;
+    }
+}
+
+.about-MxWidth {
+    width: 95%;
+    margin: 0 auto;
+    
+    @include mq(md) {
+        width: 85%;
+    }
+
+}
+
+.border {
+    border: 1px solid $cBlack;
+    border-radius: 5px;
+}

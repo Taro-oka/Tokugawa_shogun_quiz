@@ -1,0 +1,38 @@
+@use "../global" as *;
+
+@use "../parts/common" as *;
+@use "../parts/btns" as *;
+
+@use "home" as *;
+
+.about {
+
+    &__inner {
+        @extend .about-MxWidth;
+        margin-top: calc(80px + 20px);
+
+        @include mq(md) {
+            margin-top: calc(100px + 40px);
+        }
+    }
+
+    &__title {
+        @extend .font-md;
+        @extend .mb-sm;
+        text-align: center;
+    }
+
+    &__description {
+        &__inner {
+            @extend .font-sm;
+            font-weight: 600;
+            line-height: 2em;
+
+            @include mq(md) {
+                font-weight: 500;
+                line-height: 1.5em;
+            }
+        }
+    }
+
+}

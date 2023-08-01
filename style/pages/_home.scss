@@ -1,0 +1,318 @@
+@use "../global" as *;
+
+@use "../parts/common" as *;
+@use "../parts/btns" as *;
+
+body {
+    width:100vw;
+    height: fit-content;
+}
+
+#global_container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+}
+
+.header{
+    background-color: rgba(141, 202, 255, 0.5);
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+
+    @include mq(md) {
+        padding: 0 30px;
+        height: 100px;
+    }
+
+    @include mq(lg) {
+        padding: 0 60px;
+        height: 100px;
+    }
+
+    &__logo {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: fit-content;
+        height: 50%;
+
+        & .logo {
+            width: 50px;
+            height: 50px;
+            & > img {
+                width: 100%;
+                object-fit: cover;
+                border-radius: 50%;
+            }
+            margin-right: 5px;
+
+            @include mq(md) {
+                margin-right: 10px;
+            }
+        }
+
+        & .title {
+            & > span {
+                display: block;
+                font-weight: 600;
+            }
+        }
+    }
+
+    &__nav {
+        display: none;
+        
+        @include mq(md) {
+            display: block;
+        }
+
+        &__ul {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding-left: 0;
+            @extend .font-header-nav;
+
+            &__li {
+                text-decoration: none;
+                list-style: none;
+                margin-right: 30px;
+
+                &:last-child {
+                    margin-right: 0px;
+                }
+
+                & > a {
+                    text-decoration: none !important;
+                    color: $cBlack !important;
+                }
+
+                @include mq(lg) {
+                    margin-right: 60px;
+                }
+            }
+        }
+    }
+
+    &__btn {
+        display: block;
+        width: 50px;
+        height: 50px;
+        background-color: transparent;
+        border: none;
+        position: relative;
+        cursor: pointer;
+
+        & > span {
+            display: inline-block;
+            width: 100%;
+            height: 3px;
+            background-color: $cBlack;
+            position: absolute;
+            top: 50%;
+            left: 0;
+
+            &:nth-child(1) {
+                transform: translateY(calc(-50% - 15px));
+            }
+            &:nth-child(2) {
+                transform: translateY(calc(-50%));
+            }
+            &:nth-child(3) {
+                transform: translateY(calc(-50% + 15px));
+            }
+            
+        }
+
+        @include mq(md) {
+            display: none;
+        }
+    }
+
+}
+
+.quiz {
+    @extend .home-MxWidth;
+    margin-top: calc(80px + 20px);
+
+    @include mq(md) {
+        margin-top: calc(100px + 40px);
+    }
+
+    &__title {
+        text-align: center;
+        @extend .mb-sm;
+        @extend .font-lg;
+    }
+
+    &__box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        & > div {
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        &__time {
+            @extend .mb-sm;
+            font-size: 100px !important;
+            width: 50%;
+            position: relative;
+            z-index: 0;
+            
+            & .time {
+                border: none;
+                z-index: 2;
+            }
+            
+            & .bg {
+                @extend .border;
+                display: inline-block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 0;
+            }
+
+        }
+
+        &__text {
+            @extend .font-xlg;
+            @extend .mb-sm;
+            @extend .border;
+            width: 85%;
+        }
+
+
+        @include mq(md) {
+            flex-direction: row;
+            justify-content: space-between;
+            margin-bottom: 60px;
+
+            & > div {
+                margin-bottom: 0;
+            }
+
+            &__time {
+                flex-basis: 25%;
+            }
+
+            &__text {
+                flex-basis: 70%;
+            }
+
+        }
+        
+    }
+
+    &__buttons {
+        width: 85%;
+        margin: 0 auto 50px auto;
+        display: flex;
+        justify-content: space-between;
+
+        @include mq(md) {
+            width: 100%;
+            margin: 0 auto 80px auto;
+        }
+
+        & > button {
+            @extend .font-sm;
+            flex-basis: 20%;
+
+            @include mq(md) {
+                height: 60px;
+            }
+
+        }
+    }
+}
+
+.mobile_menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(220, 255, 215, 0.9);
+    opacity: 0;
+    z-index: -1;
+    transform: scale(1.2);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    
+    &.inview {
+        opacity: 1;
+        transform: scale(1);
+        z-index: 2;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    &__btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 35px;
+        height: 35px;
+        border: none;
+        background-color: transparent;
+        > span {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background-color: rgb(138, 138, 138);
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+
+            &:nth-child(1) {
+                transform: rotate(45deg);
+            }
+            &:nth-child(2) {
+                transform: rotate(-45deg);
+            }
+        }
+    }
+
+    &__nav {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        &__ul {
+            padding-left: 0;
+            &__li {
+                list-style: none;
+                font-size: 25px;
+                margin-bottom: 70px;
+                border-bottom: 1px solid;
+                text-align: center;
+                & > a {
+                    color: $cBlack !important;
+                    text-decoration: none !important;
+                }
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+    
+}
