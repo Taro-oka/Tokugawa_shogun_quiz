@@ -1,0 +1,19 @@
+@use "../global" as *;
+
+@use "../parts/common" as *;
+@use "../parts/btns" as *;
+
+@use "home" as *;
+
+.contact {
+
+    &__inner {
+        @extend .contact-MxWidth;
+        margin-top: calc(80px + 20px);
+
+        @include mq(md) {
+            margin-top: calc(100px + 40px);
+        }
+    }
+    
+}

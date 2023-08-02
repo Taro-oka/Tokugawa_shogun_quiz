@@ -109,6 +109,16 @@
 
 }
 
+.contact-MxWidth {
+    width: 95%;
+    margin: 0 auto;
+    
+    @include mq(md) {
+        width: 85%;
+    }
+
+}
+
 .border {
     border: 1px solid $cBlack;
     border-radius: 5px;
