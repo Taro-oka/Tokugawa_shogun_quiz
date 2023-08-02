@@ -114,6 +114,16 @@
   }
 }
 
+.contact-MxWidth, .contact__inner {
+  width: 95%;
+  margin: 0 auto;
+}
+@media screen and (min-width: 600px) {
+  .contact-MxWidth, .contact__inner {
+    width: 85%;
+  }
+}
+
 .border, .quiz__box__time .bg, .quiz__box__text, .quiz-btn:hover {
   border: 1px solid black;
   border-radius: 5px;
@@ -305,7 +315,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 0;
+  z-index: -1;
 }
 .quiz__box__text {
   width: 85%;
@@ -355,15 +365,17 @@ body {
   height: 100vh;
   background-color: rgba(220, 255, 215, 0.9);
   opacity: 0;
+  visibility: hidden;
   z-index: -1;
   transform: scale(1.2);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: all 0.3s ease;
 }
 .mobile_menu.inview {
   opacity: 1;
-  transform: scale(1);
+  visibility: visible;
   z-index: 2;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: scale(1);
+  transition: all 0.3s ease;
 }
 .mobile_menu__btn {
   position: absolute;
@@ -432,5 +444,14 @@ body {
   .about__description__inner {
     font-weight: 500;
     line-height: 1.5em;
+  }
+}
+
+.contact__inner {
+  margin-top: 100px;
+}
+@media screen and (min-width: 600px) {
+  .contact__inner {
+    margin-top: 140px;
   }
 }/*# sourceMappingURL=style.css.map */
