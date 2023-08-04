@@ -10,6 +10,7 @@ const stop_btn = document.querySelector(".stop_btn");
 const pause_btn = document.querySelector(".pause_btn");
 const skip_btn = document.querySelector(".skip_btn");
 
+// ここで、何秒間待つのかを指定する
 const num1 = 5;
 const num2 = 3;
 
@@ -133,11 +134,12 @@ function cntdown(arg_val1, arg_val2, arg_cnt = 0, nth = 0) {
 }
 // cntdown(num1,num2);
 
-
 function animation() {
+    // バックグラウンドの横幅を取得し、その半分の距離だけ後ろ(-Z方向)にずらす。そうしないとiosでの表示では、上の文字に重なってしまう。
+    const bg_width = Math.ceil(bg.clientWidth / 2);
     bg.animate([
-        {transform: 'rotateY(0)'},
-        {transform: 'rotateY(180deg)'}
+        {transform: `translateZ(-${bg_width}px) rotateY(0)`},
+        {transform: `translateZ(-${bg_width}px) rotateY(180deg)`}
     ], {
          duration: 300,
          easing : "linear",
