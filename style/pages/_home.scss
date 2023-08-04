@@ -17,13 +17,13 @@ body {
 }
 
 .header{
-    background-color: rgba(141, 202, 255, 0.5);
+    background-color: rgb(184, 222, 255);
     width: 100%;
     height: 80px;
     position: fixed;
     top: 0;
     left: 0;
-
+    z-index: 2;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -174,20 +174,38 @@ body {
             position: relative;
             z-index: 0;
             
-            & .time {
-                border: none;
-                z-index: 2;
-            }
-            
-            & .bg {
-                @extend .border;
-                display: inline-block;
-                position: absolute;
-                top: 0;
-                left: 0;
+            &__inner {
                 width: 100%;
                 height: 100%;
-                z-index: -1;
+                position: relative;
+
+                & .time {
+                    display: block;
+                    width: fit-content;
+                    height: 100%;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%,-50%);
+                    border: none;
+                    z-index: 2;
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                
+                & .bg {
+                    @extend .border;
+                    display: inline-block;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    z-index: -1;
+                }
+
             }
 
         }
@@ -262,7 +280,7 @@ body {
     &.inview {
         opacity: 1;
         visibility: visible;
-        z-index: 2;
+        z-index: 10;
         transform: scale(1);
         transition: all 0.3s ease;
     }
