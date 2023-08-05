@@ -506,19 +506,25 @@ body {
 }
 .contact__message {
   display: none;
-  visibility: hidden;
-  opacity: 0;
   background-color: rgb(189, 251, 251);
   width: 200px;
   border-radius: 5px;
   margin-bottom: 5px;
-  transition: all 0.3s;
+  transition: all 1s ease;
 }
 .contact__message.inview {
   display: inline-block;
-  visibility: visible;
-  opacity: 1;
+  animation: sent_apper 0.8s ease;
 }
 .contact__btn {
   margin-bottom: 25px;
+}
+
+@keyframes sent_apper {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }/*# sourceMappingURL=style.css.map */
