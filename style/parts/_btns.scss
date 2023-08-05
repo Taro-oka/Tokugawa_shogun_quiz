@@ -19,3 +19,8 @@
         background-color: $cWhite;
     }
 }
+
+.send-btn {
+    @extend .quiz-btn;
+    display: inline-block;
+}

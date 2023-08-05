@@ -1,5 +1,3 @@
-const tests = document.querySelectorAll(".test");
+const temp = document.querySelectorAll(".contact__form__container__item");
 
-tests.forEach(test => {
-    console.log(test);
-});
+temp[2].style.height = "200px";

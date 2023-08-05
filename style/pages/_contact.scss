@@ -15,5 +15,60 @@
             margin-top: calc(100px + 40px);
         }
     }
+
+    &__form{
+
+        &__container {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            &__item {
+                width: 80%;
+                height: 50px;
+                padding: 10px;
+                margin-bottom: 5px;
+                
+                @include mq(md) {
+                    width: 50%;
+                }
+
+                &.last_item {
+                    height: 200px;
+                }
+            }
+        }
+
+        &__text {
+            text-align: center;
+            @extend .mb-sm;
+            @extend .font-md;
+
+            @include mq(md) {
+                margin-bottom: 30px;
+            }
+        }
+    }
     
+    &__message {
+        display: none;
+        visibility: hidden;
+        opacity: 0;
+        background-color: rgb(189, 251, 251);
+        width: 200px;
+        border-radius: 5px;
+        margin-bottom: 5px;
+        transition: all 0.3s;
+
+        &.inview {
+            display: inline-block;
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+
+    &__btn {
+        margin-bottom: 25px;
+    }
 }
