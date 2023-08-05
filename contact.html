@@ -34,9 +34,18 @@
             </header>
             <main class="contact">
                 <div class="contact__inner">
-                    <p>入力</p>
-                    <p>入力</p>
-                    <p>入力</p>
+                    <form class="contact__form">
+                        <div class="contact__form__container">
+                            <div class="contact__form__head">
+                                <h1 class="contact__form__text">問い合わせフォーム</h1>
+                            </div>
+                            <input type="text" name="name" placeholder="Name" class="contact__form__container__item" /><br />
+                            <input  type="email" name="email" placeholder="Email" class="contact__form__container__item" /><br />
+                            <textarea type="text" name="message" placeholder="Message" class="contact__form__container__item last_item"></textarea><br />
+                            <div class="contact__message">送信完了</div>
+                            <button id="submit" type="button" class="contact__btn send-btn">送信</button>
+                        </div>
+                    </form>
                 </div>
             </main>
         </div>
@@ -53,6 +62,8 @@
                 </ul>
             </div>
         </div>
+    <script src="script/contact.js"></script>
     <script src="script/mobile_menu.js"></script>
+    <!-- <script src="script/test.js"></script> -->
 </body>
 </html>
