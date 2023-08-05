@@ -50,11 +50,11 @@
   font-size: 20px;
 }
 
-.mb-sm, .contact__form__text, .about__title, .quiz__title, .quiz__box__time, .quiz__box__text {
+.mb-sm, .contact__form__text, .quiz__title, .quiz__box__time, .quiz__box__text {
   margin-bottom: 20px;
 }
 @media screen and (min-width: 600px) {
-  .mb-sm, .contact__form__text, .about__title, .quiz__title, .quiz__box__time, .quiz__box__text {
+  .mb-sm, .contact__form__text, .quiz__title, .quiz__box__time, .quiz__box__text {
     margin-bottom: 60px;
   }
 }
@@ -455,9 +455,11 @@ body {
   }
 }
 .about__title {
+  margin-bottom: 20px;
   text-align: center;
 }
 .about__description__inner {
+  text-align: justify;
   font-weight: 600;
   line-height: 2em;
 }
