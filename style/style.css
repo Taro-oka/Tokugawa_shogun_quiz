@@ -1,4 +1,8 @@
 @charset "UTF-8";
+body {
+  height: 100%;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -104,12 +108,12 @@
   }
 }
 
-.about-MxWidth, .about__inner {
+.about-MxWidth, .about__inner, .shogun_list__inner {
   width: 95%;
   margin: 0 auto;
 }
 @media screen and (min-width: 600px) {
-  .about-MxWidth, .about__inner {
+  .about-MxWidth, .about__inner, .shogun_list__inner {
     width: 85%;
   }
 }
@@ -150,12 +154,6 @@
   display: inline-block;
 }
 
-body {
-  width: 100vw;
-  height: -moz-fit-content;
-  height: fit-content;
-}
-
 #global_container {
   width: 100%;
   height: 100%;
@@ -165,7 +163,7 @@ body {
 }
 
 .header {
-  background-color: rgb(184, 222, 255);
+  background-color: rgba(184, 222, 255, 0.8);
   width: 100%;
   height: 80px;
   position: fixed;
@@ -446,6 +444,34 @@ body {
   margin-bottom: 0;
 }
 
+.arrow {
+  width: 50px;
+  position: fixed;
+  right: 15px;
+  bottom: 10px;
+  mix-blend-mode: multiply;
+  z-index: 1;
+  cursor: pointer;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+@media screen and (min-width: 600px) {
+  .arrow {
+    right: 30px;
+  }
+}
+.arrow.inview {
+  visibility: visible;
+  opacity: 1;
+}
+.arrow__img > img {
+  width: 100%;
+}
+
+.about {
+  margin-bottom: 25px;
+}
 .about__inner {
   margin-top: 100px;
 }
@@ -467,7 +493,50 @@ body {
   .about__description__inner {
     font-weight: 500;
     line-height: 1.5em;
+    font-size: 25px;
   }
+}
+
+.shogun_list {
+  margin-bottom: 25px;
+}
+.shogun_list__items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+@media screen and (min-width: 960px) {
+  .shogun_list__items {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: none;
+    flex-wrap: wrap;
+  }
+  .shogun_list__items .shogun_list__item {
+    flex-basis: 30%;
+  }
+}
+.shogun_list__item {
+  opacity: 0;
+}
+.shogun_list__item.inview {
+  opacity: 1;
+}
+.shogun_list__item__img {
+  width: 100%;
+  height: 400px;
+}
+.shogun_list__item__img > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.shogun_list__item__description {
+  text-align: justify;
 }
 
 .contact__inner {
