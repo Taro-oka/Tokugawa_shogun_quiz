@@ -15,7 +15,24 @@ btn.addEventListener("click", function(){
         alert("未入力の項目があります")
         return "Can't be executed"
     }else{
-        msg.classList.add("inview");
+        btn.textContent = "送信中....";
+        btn.disabled = true;
+
+        const templateParams = {
+            name: sent_name,
+            email: sent_email,
+            notes: sent_msg,
+        };
+    
+        emailjs.send('service_e2b0ypw', 'template_841zc4l', templateParams)
+            .then(function(response) {
+                btn.textContent = "送信";
+                msg.classList.add("inview");
+            }, function(error) {
+               btn.textContent = "送信";
+               btn.disabled = false;
+               alert('送信できませんでした', error);
+            });
     }   
 });
 

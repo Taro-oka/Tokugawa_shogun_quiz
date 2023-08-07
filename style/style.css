@@ -153,6 +153,9 @@ body {
 .send-btn {
   display: inline-block;
 }
+.send-btn:disabled {
+  pointer-events: none;
+}
 
 #global_container {
   width: 100%;

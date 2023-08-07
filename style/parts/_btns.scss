@@ -23,4 +23,8 @@
 .send-btn {
     @extend .quiz-btn;
     display: inline-block;
+
+    &:disabled {
+        pointer-events: none;
+    }
 }
