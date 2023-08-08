@@ -177,6 +177,9 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 0 15px;
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
 }
 @media screen and (min-width: 600px) {
   .header {
@@ -189,6 +192,10 @@ body {
     padding: 0 60px;
     height: 100px;
   }
+}
+.header.deactivate {
+  visibility: hidden;
+  opacity: 0;
 }
 .header__logo {
   display: flex;

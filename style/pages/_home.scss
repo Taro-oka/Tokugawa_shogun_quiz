@@ -23,6 +23,9 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 15px;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
 
     @include mq(md) {
         padding: 0 30px;
@@ -32,6 +35,11 @@
     @include mq(lg) {
         padding: 0 60px;
         height: 100px;
+    }
+
+    &.deactivate {
+        visibility: hidden;
+        opacity: 0;
     }
 
     &__logo {
