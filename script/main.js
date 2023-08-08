@@ -17,9 +17,12 @@ const num2 = 3;
 let timeId;
 let index;
 let nth_in_arr;
+// クイズを動かすフラグ
 let flg = true;
+// 今問題が表示なのか、答えが表示なのかを知らせるフラグ（アニメーションなどで必要）
 let q_flg = true;
-let pause_flg = true;
+// ポーズをするかどうかのフラグ
+let pause_flg = false;
 let anime_state;
 let cnt;
 let val1;
@@ -27,6 +30,7 @@ let val2;
 
 start_btn.addEventListener("click", function(){
     cntdown(num1,num2,0,0);
+    // スタートボタンの連打で狂わないように、ここではフォルスを。セットタイムインターバルは押した数だけ生成されてしまう。
     flg = false;
     pause_flg = true;
 });
