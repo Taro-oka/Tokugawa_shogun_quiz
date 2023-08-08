@@ -63,6 +63,7 @@ skip_btn.addEventListener("click", function() {
         flg = true;
         pause_flg = false;
     }
+    pause_btn.textContent = "pause";
     q_flg = true;
 });
 
